@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', bold;
+    font-size: medium;
+}
+
+body{
+    background-color: #181818;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+}
+
+.todo-app{
+    color: aliceblue;
+    padding: 2rem 3rem;
+    margin: 1rem;
+    box-shadow: 10px 0.5rem 0.5rem #fff;
+    border-radius: 1.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}

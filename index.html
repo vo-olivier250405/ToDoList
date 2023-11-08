@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>TODO LIST-Application</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="todo-app">
-            <h2>TO DO LIST</h2>
-        </div>
+      <div class="todo-app">
+        <h2>TO DO LIST</h2>
+      </div>
     </div>
     <div class="row">
-        <input type="text" id="input-box" placeholder="Add a new todo">
-        <button>+</button>
+      <input type="text" id="input-box" placeholder="Add a new todo" />
+      <button onclick="addTask()">+</button>
     </div>
     <div class="todo-list">
-        <ul>
-            <li class="checked">Task 1</li>
-            <li class="checked">Task 2</li>
-            <li class="">Task 3</li>
-            <li class="">Task 4</li>
-        </ul>
+      <ul id="list-container">
+        <li onclick="changeClass(this)" id="task-1" class="checked">Task 1</li>
+        <li onclick="changeClass(this)" id="task-2" class="checked">Task 2</li>
+        <li onclick="changeClass(this)" id="task-3" class="">Task 3</li>
+        <li onclick="changeClass(this)" id="task-4" class="">Task 4</li>
+      </ul>
     </div>
-    <script src="scripts/script.js"></script>
-</body>
+    <script src="scripts/index.js"></script>
+  </body>
 </html>

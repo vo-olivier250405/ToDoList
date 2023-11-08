@@ -7,10 +7,15 @@
     box-sizing: border-box;
     font-family: 'Oswald', bold;
     font-size: medium;
+    transition: 0.3s all ease;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 body{
-    background-color: #181818;
+    background-color: rgb(245, 190, 110);
+    min-height: 100vh;
 }
 
 .container{
@@ -22,10 +27,76 @@ body{
     color: aliceblue;
     padding: 2rem 3rem;
     margin: 1rem;
-    box-shadow: 10px 0.5rem 0.5rem #fff;
+    box-shadow: 10px 0.5rem 0.5rem  rgb(161, 99, 4);
+    border: 1px solid aliceblue;
     border-radius: 1.5rem;
 }
 
-h2{
+.todo-app h2{
     font-size: 2rem;
+}
+.row{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}   
+
+.todo-list{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 10px 0.5rem 0.5rem rgb(161, 99, 4);
+    justify-content: center;
+    position: abrelative;
+}   
+
+.todo-list ul{
+    border: 2px solid rgb(245, 190, 110);
+    border-radius: 10px;
+    padding: 1rem;
+    text-decoration: none;
+    list-style: none;
+    display: grid;
+    justify-content: left;
+    position: relative;
+}
+.todo-list ul li::before{
+    content: '☑️ ';
+    position: relative;
+}
+
+.todo-list ul li.checked{
+    content: '☑️ ';
+}
+
+.todo-list ul li.checked::before{
+    content: '✅️ ';
+}
+
+button{
+    /*margin-left: 0.1rem;*/
+    padding: 0.5rem;
+    box-shadow: 10px 0.5rem 0.5rem  rgb(161, 99, 4);
+    border: 1px solid aliceblue;
+    border-radius: 3px;
+    background-color: rgb(221, 167, 85);
+    color: aliceblue;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+button:hover{
+    background-color: rgb(161, 99, 4);
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+
+input{
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 10px 0.5rem 0.5rem  rgb(161, 99, 4);
+    outline: none;
 }

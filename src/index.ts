@@ -1,5 +1,5 @@
 const inputBox = document.getElementById("input-box") as HTMLInputElement;
-const todoList = document.getElementById("list-container");
+const todoList = document.getElementById("list-container") as HTMLUListElement;
 
 function addTask(): void {
   const li = document.createElement("li");
@@ -9,30 +9,45 @@ function addTask(): void {
     li.innerHTML = inputBox?.value;
     todoList?.appendChild(li);
     li.setAttribute("onclick", "changeClass(this)");
-    // li.onclick = changeClass(HTMLLinkElement)
   }
   inputBox.value = "";
   let span = document.createElement("span");
   span.innerHTML = "\u00d7";
   span.setAttribute("onclick", "deleteElement(this)");
   li.appendChild(span);
+  saveDatas();
 }
 
 function changeClass(element: HTMLLinkElement) {
   console.log(element.classList);
 
-  //   const tasks = document.querySelector(`#task-${id}`) as HTMLDListElement;
-  //   console.log(tasks);
   if (element.className === "") {
     element.className = "checked";
   } else {
     element.className = "";
   }
-
-  //   const truc = (document.getElementById("tasks")?.className = "checked");
+  saveDatas();
 }
 
 function deleteElement(element: HTMLSpanElement) {
-  console.log(element.parentElement);
   element.parentElement?.remove();
+  saveDatas();
 }
+
+function saveDatas() {
+  sessionStorage.setItem("datas", todoList?.innerHTML);
+}
+
+function showTasks() {
+  if (todoList != undefined){
+    todoList.innerHTML = sessionStorage.getItem("datas")!;
+  }
+}
+
+document.querySelector("input")?.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    document.querySelector("button")?.click();
+  }
+});
+
+showTasks();

@@ -34,6 +34,8 @@ body{
 
 .todo-app h2{
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
 }
 .row{
     padding: 1rem;
@@ -123,4 +125,32 @@ input{
     outline: none;
     display: flex;
     text-align: center;
+}
+
+
+@media (width >= 600px) {
+    .row{
+        display: grid;
+    }
+    button{
+        margin: 1rem;
+        padding: 0.1rem;
+    }
+}
+
+@media (width >= 900px) {
+    .row{
+        display: grid;
+        justify-content: center;
+    }
+    .todo-list{
+        min-width: 300px;
+        max-width: max-content;
+        min-height: 10rem;
+        max-height: max-content;
+    }
+    main{
+        display: grid;
+        justify-content: center;
+    }
 }
